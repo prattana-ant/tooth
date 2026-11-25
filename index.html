@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmileCare - แปรงสีฟันเพื่อรอยยิ้ม</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f8fcf9;
+    color: #243b32;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: white;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #18865b;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 25px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #18865b;
+}
+
+/* Hero */
+.hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8%;
+    background: #e7f5ec;
+    gap: 30px;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+    color: #18865b;
+}
+
+.hero-text p {
+    color: #60756a;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #18865b;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #116b47;
+    transform: translateY(-3px);
+}
+
+.hero img {
+    width: 45%;
+    max-width: 480px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* Features */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 45px 8%;
+    background: white;
+    flex-wrap: wrap;
+}
+
+.feature {
+    text-align: center;
+    font-size: 16px;
+}
+
+.feature h3 {
+    color: #18865b;
+    margin-bottom: 8px;
+}
+
+/* Products */
+.products {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.section-desc {
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.product-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.product-card h3 {
+    margin: 18px 0 10px;
+    font-size: 21px;
+}
+
+.product-card p {
+    color: #777;
+    line-height: 1.6;
+}
+
+.price {
+    color: #18865b;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 18px 0;
+}
+
+.buy-btn {
+    display: block;
+    padding: 12px;
+    background: #18865b;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.buy-btn:hover {
+    background: #116b47;
+}
+
+/* Order Form */
+.order-form {
+        max-width: 650px;
+        margin: 0 auto 70px;
+        padding: 30px;
+        background: white;
+        border-radius: 18px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        text-align: left;
+    }
+
+    .order-form label {
+        display: block;
+        margin: 12px 0 6px;
+        font-weight: bold;
+    }
+
+    .order-form input,
+    .order-form textarea,
+    .order-form select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #d5ddd8;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    .order-form button {
+        width: 100%;
+        margin-top: 20px;
+        border: 0;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .order-form button:disabled {
+        opacity: 0.65;
+        cursor: wait;
+    }
+
+/* Promotion */
+.promotion {
+    margin: 30px 8% 70px;
+    background: #18865b;
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.promotion h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.promotion p {
+    margin-bottom: 20px;
+}
+
+.promotion .btn {
+    background: white;
+    color: #18865b;
+}
+
+/* Footer */
+footer {
+    background: #173c2e;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer p {
+    margin: 8px;
+    color: #c5d8ce;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 6%;
+    }
+
+    .hero-text h1 {
+        font-size: 35px;
+    }
+
+    .hero img {
+        width: 100%;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        gap: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<header>
+    <div class="logo">🌿 SmileCare</div>
+
+    <nav>
+        <a href="#home">หน้าแรก</a>
+        <a href="#products">สินค้า</a>
+        <a href="#promotion">โปรโมชั่น</a>
+        <a href="#contact">ติดต่อเรา</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+
+    <div class="hero-text">
+        <h1>
+            เริ่มต้นรอยยิ้มที่สดใส
+            ด้วย <span>SmileCare</span>
+        </h1>
+
+        <p>
+            ดูแลสุขภาพช่องปากของคุณด้วยแปรงสีฟัน
+            คุณภาพดี ออกแบบมาเพื่อการทำความสะอาด
+            ที่อ่อนโยนและมีประสิทธิภาพ
+        </p>
+
+        <a href="#products" class="btn">
+            เลือกซื้อสินค้า →
+        </a>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800"
+         alt="ผลิตภัณฑ์ดูแลช่องปาก">
+
+</section>
+
+<!-- Features -->
+<section class="features">
+
+    <div class="feature">
+        <h3>🌱 วัสดุคุณภาพ</h3>
+        <p>คัดสรรวัสดุอย่างดี</p>
+    </div>
+
+    <div class="feature">
+        <h3>✨ อ่อนโยน</h3>
+        <p>เหมาะกับการใช้งานทุกวัน</p>
+    </div>
+
+    <div class="feature">
+        <h3>🚚 จัดส่งทั่วไทย</h3>
+        <p>สะดวก รวดเร็ว</p>
+    </div>
+
+</section>
+
+<!-- Products -->
+<section class="products" id="products">
+
+    <h2 class="section-title">สินค้าของเรา</h2>
+    <p class="section-desc">
+        เลือกแปรงสีฟันที่เหมาะกับคุณ
+    </p>
+
+    <div class="product-container" id="productContainer">
+
+        <!-- Product 1 -->
+        <div class="product-card">
+
+            <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=600"
+                 alt="แปรงสีฟันไม้ไผ่">
+
+            <h3>Eco Bamboo Toothbrush</h3>
+
+            <p>
+                แปรงสีฟันด้ามไม้ไผ่ ดีไซน์เรียบง่าย
+                เหมาะสำหรับผู้ที่ใส่ใจสิ่งแวดล้อม
+            </p>
+
+            <div class="price">฿129</div>
+
+            <a href="#contact" class="buy-btn">
+                สั่งซื้อสินค้า
+            </a>
+
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+
+            <img src="https://images.unsplash.com/photo-1559591937-abc1b7a2d3e0?w=600"
+                 alt="แปรงสีฟันไฟฟ้า">
+
+            <h3>Smart Clean Toothbrush</h3>
+
+            <p>
+                แปรงสีฟันดีไซน์ทันสมัย
+                เพื่อการดูแลช่องปากในทุกวัน
+            </p>
+
+            <div class="price">฿499</div>
+
+            <a href="#contact" class="buy-btn">
+                สั่งซื้อสินค้า
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Order Form -->
+<section class="products" id="order">
+    <h2 class="section-title">แบบฟอร์มสั่งซื้อ</h2>
+    <p class="section-desc">กรอกข้อมูลเพื่อบันทึกคำสั่งซื้อลง Google Sheet</p>
+
+    <form class="order-form" id="orderForm">
+        <label for="customerName">ชื่อผู้สั่งซื้อ</label>
+        <input id="customerName" name="name" type="text" required>
+
+        <label for="email">อีเมล</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="phone">เบอร์โทรศัพท์</label>
+        <input id="phone" name="phone" type="tel" required>
+
+        <label for="product">สินค้า</label>
+        <select id="product" name="product">
+            <option value="Eco Bamboo Toothbrush">Eco Bamboo Toothbrush</option>
+            <option value="Smart Clean Toothbrush">Smart Clean Toothbrush</option>
+        </select>
+
+        <label for="quantity">จำนวน</label>
+        <input id="quantity" name="quantity" type="number" min="1" value="1" required>
+
+        <label for="address">ที่อยู่จัดส่ง</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+
+        <button type="submit" class="btn" id="submitOrder">ส่งคำสั่งซื้อ</button>
+        <p id="orderStatus" style="margin-top:15px;text-align:center;"></p>
+    </form>
+</section>
+
+<!-- Promotion -->
+<section class="promotion" id="promotion">
+
+    <h2>🎉 โปรโมชั่นพิเศษ!</h2>
+
+    <p>
+        ซื้อสินค้าครบ 500 บาท รับส่วนลดพิเศษ
+        สำหรับการสั่งซื้อครั้งนี้
+    </p>
+
+    <a href="#products" class="btn">
+        ช้อปเลย
+    </a>
+
+</section>
+
+<!-- Footer -->
+<footer>
+
+    <h2>🌿 SmileCare</h2>
+
+    <p>ดูแลรอยยิ้มของคุณในทุก ๆ วัน</p>
+
+    <p>โทร: 02-123-4567</p>
+
+    <p>Email: smilecare@example.com</p>
+
+    <p>© 2026 SmileCare. All Rights Reserved.</p>
+
+</footer>
+
+<script src="config.js"></script>
+<script>
+async function loadProductsFromGoogleSheets() {
+    const container = document.getElementById("productContainer");
+
+    if (!window.APP_CONFIG?.googleSheetsApiUrl) {
+        console.error("ยังไม่ได้ตั้งค่า googleSheetsApiUrl ใน config.js");
+        return;
+    }
+
+    try {
+        const params = new URLSearchParams({
+            action: window.APP_CONFIG.productsAction || "getProducts",
+            sheet: window.APP_CONFIG.sheetName || "Sheet1"
+        });
+
+        const response = await fetch(`${window.APP_CONFIG.googleSheetsApiUrl}?${params}`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const result = await response.json();
+        const products = Array.isArray(result) ? result : (result.products || result.data || []);
+
+        if (!products.length) {
+            container.innerHTML = '<p class="section-desc">ยังไม่มีข้อมูลสินค้าใน Google Sheet</p>';
+            return;
+        }
+
+        container.innerHTML = products.map((product) => {
+            const name = product.name || product.Name || product["ชื่อสินค้า"] || "";
+            const description = product.description || product.Description || product["รายละเอียด"] || "";
+            const price = product.price || product.Price || product["ราคา"] || "0";
+            const image = product.image || product.Image || product["รูปภาพ"] || "";
+
+            return `
+                <div class="product-card">
+                    ${image ? `<img src="${image}" alt="${name}">` : ""}
+                    <h3>${name}</h3>
+                    <p>${description}</p>
+                    <div class="price">฿${price}</div>
+                    <a href="#contact" class="buy-btn">สั่งซื้อสินค้า</a>
+                </div>
+            `;
+        }).join("");
+    } catch (error) {
+        console.error("โหลดข้อมูล Google Sheet ไม่สำเร็จ:", error);
+        container.innerHTML = '<p class="section-desc">ไม่สามารถโหลดข้อมูลสินค้าได้ กรุณาตรวจสอบ Apps Script และสิทธิ์การเข้าถึง</p>';
+    }
+}
+
+loadProductsFromGoogleSheets();
+
+const orderForm = document.getElementById("orderForm");
+const submitOrder = document.getElementById("submitOrder");
+const orderStatus = document.getElementById("orderStatus");
+
+orderForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    submitOrder.disabled = true;
+    submitOrder.textContent = "กำลังส่ง...";
+    orderStatus.textContent = "";
+
+    const order = {
+        action: "addOrder",
+        sheet: window.APP_CONFIG.orderSheetName || "Orders",
+        timestamp: new Date().toISOString(),
+        name: orderForm.elements.name.value.trim(),
+        email: orderForm.elements.email.value.trim(),
+        phone: orderForm.elements.phone.value.trim(),
+        product: orderForm.elements.product.value,
+        quantity: orderForm.elements.quantity.value,
+        address: orderForm.elements.address.value.trim()
+    };
+
+    try {
+        await fetch(window.APP_CONFIG.googleSheetsApiUrl, {
+            method: "POST",
+            mode: "no-cors",
+            body: new URLSearchParams(order)
+        });
+
+        orderStatus.style.color = "#18865b";
+        orderStatus.textContent = "ส่งคำสั่งซื้อแล้ว";
+        orderForm.reset();
+    } catch (error) {
+        console.error("ส่งคำสั่งซื้อไม่สำเร็จ:", error);
+        orderStatus.style.color = "#b42318";
+        orderStatus.textContent = "ไม่สามารถส่งคำสั่งซื้อได้ กรุณาลองใหม่อีกครั้ง";
+    } finally {
+        submitOrder.disabled = false;
+        submitOrder.textContent = "ส่งคำสั่งซื้อ";
+    }
+});
+
+document.querySelectorAll(".buy-btn").forEach((button) => {
+    button.setAttribute("href", "#order");
+});
+</script>
+
+</body>
+</html>
